@@ -1,0 +1,13 @@
+//Read two strings and print second string is sub string of first string or not.
+import java.util.*;
+class test  {
+    public static void main(String[] args) {
+       Scanner s=new Scanner(System.in);
+      String str1=s.nextLine();
+      String str2=s.nextLine();
+      if(str1.contains(str2))
+      System.out.println("Yes");
+      else
+      System.out.println("No");
+    }
+}
