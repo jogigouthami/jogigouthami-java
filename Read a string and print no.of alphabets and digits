@@ -1,0 +1,48 @@
+EX:READ A STRING AND PRINT NO OF ALPHABETS,NO OF UPPER CASE LETTERS,NO OF LOWER CASE LETTERS,NO OF DIGITS AND NO OF SPECIAL SYMBOLS.
+import java.util.Scanner;
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String inputString = scanner.nextLine();
+        countCharacters(inputString);
+        
+        scanner.close();
+    }
+    
+    public static void countCharacters(String inputString) {
+        int alphabets = 0;
+        int upperCase = 0;
+        int lowerCase = 0;
+        int digits = 0;
+        int specialSymbols = 0;
+        for (int i = 0; i < inputString.length(); i++) {
+            char ch = inputString.charAt(i);
+            
+            if (Character.isLetter(ch)) {
+                alphabets++;
+                if (Character.isUpperCase(ch)) {
+                    upperCase++;
+                } else if (Character.isLowerCase(ch)) {
+                    lowerCase++;
+                }
+            } else if (Character.isDigit(ch)) {
+                digits++;
+            } else {
+                specialSymbols++;
+            }
+        }
+        System.out.println("Total Alphabets: " + alphabets);
+        System.out.println("Uppercase letters: " + upperCase);
+        System.out.println("Lowercase letters: " + lowerCase);
+        System.out.println("Digits: " + digits);
+        System.out.println("Special symbols: " + specialSymbols);
+    }
+}
+
+OUTPUT:Enter a string: bad girl
+Total Alphabets: 7
+Uppercase letters: 0
+Lowercase letters: 7
+Digits: 0
+Special symbols: 1
